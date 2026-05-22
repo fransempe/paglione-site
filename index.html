@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paglione Importaciones: equipos vending, expendedoras de vapers, totems digitales y locales automáticos 24/7 llave en mano.">
+  <title>Paglione Importaciones | Sistemas Vending y Locales Automáticos 24/7</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #697182;
+      --line: #e5e9ef;
+      --paper: #f6f8fb;
+      --white: #ffffff;
+      --navy: #101832;
+      --blue: #06559f;
+      --green: #2fd38d;
+      --green-dark: #13a867;
+      --red: #f23846;
+      --shadow: 0 22px 55px rgba(16, 24, 50, .16);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Montserrat, Avenir Next, Avenir, Segoe UI, Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 34px rgba(17, 24, 39, .06);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 110px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      width: clamp(178px, 22vw, 285px);
+      height: auto;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: flex-end;
+      gap: clamp(18px, 4vw, 54px);
+      color: #283044;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .menu a {
+      padding: 14px 0;
+      transition: transform .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--green-dark);
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:focus-visible,
+    .menu a:focus-visible,
+    .float-whatsapp:focus-visible {
+      outline: 3px solid rgba(47, 211, 141, .5);
+      outline-offset: 4px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #18b965);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(37, 211, 102, .28);
+    }
+
+    .btn-whatsapp:hover {
+      background: #1fc15b;
+    }
+
+    .nav .btn {
+      padding: 0 24px;
+      font-size: 15px;
+      letter-spacing: .04em;
+    }
+
+    .wa-mark {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(25, 35, 51, .98) 0%, rgba(38, 52, 68, .94) 48%, rgba(11, 26, 42, .55) 100%),
+        url("assets/importacion-contenedor.jpg") center / cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(47, 211, 141, .12), transparent 34%),
+        radial-gradient(circle at 78% 24%, rgba(255, 255, 255, .16), transparent 23%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 160px;
+      background: linear-gradient(180deg, rgba(0, 30, 50, 0), rgba(0, 49, 79, .9));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 630px;
+      display: flex;
+      align-items: center;
+      padding: 74px 0 88px;
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: clamp(14px, 1.6vw, 18px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 790px;
+      margin-bottom: 28px;
+      color: #fff;
+      font-size: clamp(46px, 8vw, 92px);
+      font-weight: 950;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 710px;
+      margin-bottom: 38px;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.45;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .hero-actions .btn {
+      min-width: 260px;
+      padding: 0 34px;
+      font-size: 15px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .btn-green {
+      background: #17bd83;
+      color: #fff;
+      box-shadow: 0 16px 26px rgba(23, 189, 131, .28);
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #121a35;
+      box-shadow: 0 16px 26px rgba(0, 0, 0, .12);
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
+      margin-top: 42px;
+    }
+
+    .trust-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(8px);
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .trust-item span {
+      color: rgba(255, 255, 255, .72);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .section {
+      padding: clamp(70px, 9vw, 118px) 0;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      color: #1d273d;
+      font-size: clamp(31px, 5vw, 48px);
+      font-style: italic;
+      font-weight: 950;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section-copy {
+      max-width: 640px;
+      margin: 0 auto 58px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .product {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e8edf4;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 34px rgba(23, 32, 51, .08);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .product::after {
+      content: "";
+      height: 5px;
+      order: -1;
+      background: linear-gradient(90deg, var(--red), #1476c8, var(--green));
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47, 211, 141, .7);
+      box-shadow: var(--shadow);
+    }
+
+    .product-media {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      background:
+        linear-gradient(135deg, #eef4f8 0%, #ffffff 55%, #e8f1f8 100%);
+      overflow: hidden;
+    }
+
+    .product-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 48%, rgba(7, 16, 33, .42));
+      pointer-events: none;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .product-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .pill {
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 950;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .pill-green {
+      background: #cef4df;
+      color: #086640;
+    }
+
+    .pill-purple {
+      background: #eadcff;
+      color: #6d32a8;
+    }
+
+    .pill-blue {
+      background: #dbeafe;
+      color: #1452a3;
+    }
+
+    .product h3 {
+      margin-bottom: 14px;
+      color: #214183;
+      font-size: clamp(24px, 2.4vw, 32px);
+      font-weight: 950;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .product p {
+      margin-bottom: 26px;
+      color: #768092;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .product .btn {
+      margin-top: auto;
+      min-height: 50px;
+      padding: 0 18px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .product .btn:hover {
+      background: #033d77;
+    }
+
+    .local {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(48, 211, 141, .18), transparent 32%),
+        radial-gradient(circle at 12% 86%, rgba(248, 205, 67, .12), transparent 31%),
+        linear-gradient(135deg, #0a1027 0%, #17164a 100%);
+      color: #fff;
+    }
+
+    .local::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .65), transparent 72%);
+      pointer-events: none;
+    }
+
+    .local .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(380px, 1fr);
+      gap: clamp(42px, 7vw, 86px);
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 9px 16px;
+      border-radius: 6px;
+      background: #20bf84;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .local h2 {
+      margin-bottom: 28px;
+      color: #fff;
+      font-size: clamp(44px, 6.7vw, 86px);
+      font-weight: 950;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .local h2 span {
+      color: var(--green);
+    }
+
+    .local-copy {
+      max-width: 690px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, .78);
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.45;
+    }
+
+    .checks {
+      display: grid;
+      gap: 16px;
+      margin: 0 0 40px;
+      padding: 0;
+      list-style: none;
+      color: rgba(255, 255, 255, .9);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .checks li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .check-dot {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #08251a;
+      font-size: 12px;
+      font-weight: 950;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    .local .btn {
+      min-height: 68px;
+      padding: 0 42px;
+      color: #071326;
+      font-size: clamp(17px, 2vw, 23px);
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .showcase {
+      position: relative;
+    }
+
+    .showcase::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(47, 211, 141, .85), rgba(255, 204, 70, .7));
+      filter: blur(22px);
+      opacity: .34;
+    }
+
+    .showcase img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / .86;
+      object-fit: cover;
+      border: 12px solid #1b2942;
+      border-radius: 32px;
+      box-shadow: 0 35px 70px rgba(0, 0, 0, .35);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: clamp(58px, 7vw, 88px);
+      padding-top: 54px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .step {
+      min-height: 210px;
+      padding: 28px 24px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .045);
+      text-align: center;
+    }
+
+    .step-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 16px;
+      color: var(--green);
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1.15;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .62);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .contact {
+      background:
+        linear-gradient(180deg, #fff 0%, #f4f8fb 100%);
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: min(270px, 70vw);
+      margin: 0 auto 34px;
+      opacity: .65;
+    }
+
+    .contact small {
+      display: block;
+      margin-bottom: 16px;
+      color: #9aa4b3;
+      font-size: 13px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 66px;
+      padding: 0 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #17bd83);
+      color: #071326;
+      box-shadow: 0 18px 38px rgba(37, 211, 102, .28);
+      font-size: clamp(19px, 4vw, 28px);
+      font-weight: 950;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      transition: color .2s ease;
+    }
+
+    .phone-link:hover {
+      color: #071326;
+      transform: translateY(-2px);
+    }
+
+    .phone-link .wa-mark {
+      width: 30px;
+      height: 30px;
+      color: #071326;
+    }
+
+    .legal {
+      margin-top: 54px;
+      margin-bottom: 0;
+      color: #a5adbb;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .42em;
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      right: max(18px, env(safe-area-inset-right));
+      bottom: max(18px, env(safe-area-inset-bottom));
+      z-index: 70;
+      width: 62px;
+      height: 62px;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+      display: grid;
+      place-items: center;
+      transition: transform .2s ease, background-color .2s ease;
+    }
+
+    .float-whatsapp:hover {
+      transform: translateY(-3px) scale(1.04);
+      background: #1fc15b;
+    }
+
+    .float-whatsapp .wa-mark {
+      width: 32px;
+      height: 32px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        min-height: 132px;
+      }
+
+      .menu {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        font-size: 11px;
+      }
+
+      .nav .btn {
+        order: 3;
+        min-height: 42px;
+        padding: 0 22px;
+        font-size: 13px;
+      }
+
+      .logo {
+        width: 214px;
+      }
+
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(48, 63, 79, .98) 0%, rgba(48, 63, 79, .92) 58%, rgba(0, 49, 79, .7) 100%),
+          url("assets/importacion-contenedor.jpg") center / cover;
+      }
+
+      .hero-inner {
+        min-height: 560px;
+      }
+
+      .products-grid,
+      .local-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .local-grid {
+        gap: 50px;
+      }
+
+      .showcase {
+        max-width: 680px;
+        margin-inline: auto;
+      }
+
+      .steps {
+        max-width: 640px;
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .topbar {
+        position: relative;
+      }
+
+      .nav {
+        align-items: center;
+        min-height: 112px;
+      }
+
+      .logo {
+        width: 198px;
+      }
+
+      .menu {
+        gap: 12px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 2px;
+      }
+
+      .menu a {
+        flex: 0 0 auto;
+      }
+
+      .hero-inner {
+        min-height: 600px;
+        padding: 58px 0 70px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 13vw, 60px);
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+      }
+
+      .hero-actions .btn,
+      .local .btn {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .section-title {
+        text-align: left;
+      }
+
+      .section-copy {
+        text-align: left;
+      }
+
+      .product-body {
+        padding: 22px;
+      }
+
+      .local {
+        padding-top: 78px;
+      }
+
+      .showcase img {
+        border-width: 8px;
+        border-radius: 24px;
+      }
+
+      .step {
+        min-height: 176px;
+      }
+
+      .phone-link {
+        gap: 9px;
+      }
+
+      .phone-link .wa-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .legal {
+        line-height: 1.8;
+        letter-spacing: .28em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="float-whatsapp" href="https://wa.me/5492235626120" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+    <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Zm0 23.48h-.01c-1.9 0-3.76-.51-5.39-1.47l-.39-.23-4.16 1.09 1.11-4.05-.26-.42a10.6 10.6 0 0 1-1.62-5.64c0-5.86 4.77-10.62 10.64-10.62 2.84 0 5.51 1.11 7.52 3.12a10.56 10.56 0 0 1 3.11 7.51c0 5.86-4.77 10.62-10.64 10.62Zm5.83-7.96c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.34-.26-.62-.52-.53-.71-.54l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66s1.14 3.08 1.3 3.29c.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.47.21 2.02.13.62-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37Z"/>
+    </svg>
+  </a>
+
+  <header class="topbar">
+    <div class="container nav" aria-label="Navegacion principal">
+      <a href="#inicio" aria-label="Paglione Importaciones">
+        <img class="logo" src="assets/logo-paglione.png" alt="Paglione Importaciones">
+      </a>
+
+      <nav class="menu">
+        <a href="#vending">Equipos<br>Vending</a>
+        <a href="#local247">Tu Local<br>24/7</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="btn btn-whatsapp" href="https://wa.me/5492235626120" target="_blank" rel="noopener">
+        <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Zm0 23.48h-.01c-1.9 0-3.76-.51-5.39-1.47l-.39-.23-4.16 1.09 1.11-4.05-.26-.42a10.6 10.6 0 0 1-1.62-5.64c0-5.86 4.77-10.62 10.64-10.62 2.84 0 5.51 1.11 7.52 3.12a10.56 10.56 0 0 1 3.11 7.51c0 5.86-4.77 10.62-10.64 10.62Z"/>
+        </svg>
+        Contactanos
+      </a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Un solo proveedor, todo el negocio</p>
+          <h1>Sistemas vending y locales automáticos</h1>
+          <p class="hero-copy">Importamos e instalamos tecnología de última generación para que tu negocio facture las 24 horas del día, sin empleados.</p>
+          <div class="hero-actions">
+            <a class="btn btn-green" href="#local247">Armar mi local 24/7</a>
+            <a class="btn btn-light" href="#vending">Ver catálogo máquinas</a>
+          </div>
+          <div class="trust-row" aria-label="Servicios destacados">
+            <div class="trust-item">
+              <strong>24/7</strong>
+              <span>Venta automática</span>
+            </div>
+            <div class="trust-item">
+              <strong>QR</strong>
+              <span>Pagos integrados</span>
+            </div>
+            <div class="trust-item">
+              <strong>360°</strong>
+              <span>Proyecto llave en mano</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vending" class="section">
+      <div class="container">
+        <h2 class="section-title">Tecnología en expendedoras</h2>
+        <p class="section-copy">Equipos robustos con sistemas de pago integrados para billetes, monedas y QR.</p>
+
+        <div class="products-grid">
+          <article class="product">
+            <div class="product-media">
+              <img src="assets/local-automatico.jpg" alt="Local automático con expendedoras de snacks y bebidas">
+            </div>
+            <div class="product-body">
+              <span class="pill pill-green">Alta rentabilidad</span>
+              <h3>Snacks y bebidas</h3>
+              <p>Sistemas multizona de temperatura. Bandejas configurables para gaseosas, golosinas y alimentos frescos.</p>
+              <a class="btn" href="https://wa.me/5492235626120?text=Hola%2C%20quiero%20cotizar%20un%20equipo%20de%20snacks%20y%20bebidas" target="_blank" rel="noopener">
+                <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Z"/>
+                </svg>
+                Consultar por snacks
+              </a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media">
+              <img src="assets/expendedora-vapers.jpeg" alt="Expendedora de vapers instalada en un bar">
+            </div>
+            <div class="product-body">
+              <span class="pill pill-purple">Tendencia mundial</span>
+              <h3>Expendedora vapers</h3>
+              <p>Diseño compacto y blindado. Control de edad integrado y máxima seguridad para productos de alta rotación.</p>
+              <a class="btn" href="https://wa.me/5492235626120?text=Hola%2C%20quiero%20cotizar%20una%20expendedora%20de%20vapers" target="_blank" rel="noopener">
+                <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Z"/>
+                </svg>
+                Consultar por vapes
+              </a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media">
+              <img src="assets/totem-digital.png" alt="Totem publicitario digital">
+            </div>
+            <div class="product-body">
+              <span class="pill pill-blue">Publicidad digital</span>
+              <h3>E-totem digital</h3>
+              <p>Pantallas publicitarias dinámicas para locales, shoppings, clínicas, hoteles, eventos y espacios públicos.</p>
+              <a class="btn" href="https://wa.me/5492235626120?text=Hola%2C%20quiero%20consultar%20por%20un%20totem%20digital" target="_blank" rel="noopener">
+                <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Z"/>
+                </svg>
+                Consultar por totem
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="local247" class="section local">
+      <div class="container">
+        <div class="local-grid">
+          <div>
+            <span class="tag">Llave en mano</span>
+            <h2>Montamos tu <span>local automático 24/7</span></h2>
+            <p class="local-copy">Un modelo de negocio revolucionario: ingresos constantes, control total desde tu celular, sin dolores de cabeza por personal ni horarios de cierre.</p>
+
+            <ul class="checks">
+              <li><span class="check-dot">✓</span><span>Asesoramiento comercial y de locación.</span></li>
+              <li><span class="check-dot">✓</span><span>Configuración de sistemas de pago locales e internacionales.</span></li>
+              <li><span class="check-dot">✓</span><span>Servicio técnico postventa garantizado por Paglione.</span></li>
+            </ul>
+
+            <a class="btn btn-green" href="https://wa.me/5492235626120?text=Hola%2C%20quiero%20iniciar%20mi%20proyecto%20de%20local%20automatico%2024%2F7" target="_blank" rel="noopener">
+              <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Z"/>
+              </svg>
+              Iniciar mi proyecto
+            </a>
+          </div>
+
+          <div class="showcase">
+            <img src="assets/local-automatico.jpg" alt="Local automático con máquinas expendedoras">
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="currentColor" d="M10 19h28l-2.1-8.4A4 4 0 0 0 32 7H16a4 4 0 0 0-3.9 3.6L10 19Zm28 3H10v17a2 2 0 0 0 2 2h7V29h10v12h7a2 2 0 0 0 2-2V22Z"/>
+            </svg>
+            <h3>1. Elegís el lugar</h3>
+            <p>Te ayudamos a analizar las mejores zonas de alto tránsito para asegurar las ventas.</p>
+          </article>
+
+          <article class="step">
+            <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="currentColor" d="M20 8h8l1.2 5.2 4.6-2.8 5.6 5.6-2.8 4.6L42 22v8l-5.4 1.4 2.8 4.6-5.6 5.6-4.6-2.8L28 44h-8l-1.2-5.2-4.6 2.8-5.6-5.6 2.8-4.6L6 30v-8l5.4-1.4-2.8-4.6 5.6-5.6 4.6 2.8L20 8Zm4 13a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/>
+            </svg>
+            <h3>2. Armamos la estructura</h3>
+            <p>Importamos e instalamos equipos combinando snacks, bebidas y vapes a tu medida.</p>
+          </article>
+
+          <article class="step">
+            <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="currentColor" d="M9 39h33v4H5V7h4v32Zm6-8 8-8 6 6 11-15 3 2.3-13.7 18.8-6.2-6.2-5.9 5.9L15 31Z"/>
+            </svg>
+            <h3>3. Monitoreás y ganás</h3>
+            <p>Controlás el stock y la facturación de forma remota directo desde una app móvil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="section contact">
+    <div class="container">
+      <img class="footer-logo" src="assets/logo-paglione.png" alt="Paglione Importaciones">
+      <small>Hablemos por WhatsApp</small>
+      <a class="phone-link" href="https://wa.me/5492235626120" target="_blank" rel="noopener">
+        <svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="currentColor" d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.43 1.71 6.36L3.1 29.16l7.01-1.84a12.72 12.72 0 0 0 5.93 1.51h.01c7.04 0 12.77-5.73 12.77-12.77S23.09 3.2 16.04 3.2Z"/>
+        </svg>
+        Contactanos
+      </a>
+      <p class="legal">Paglione Importaciones Mar del Plata © 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
